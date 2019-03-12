@@ -9,16 +9,21 @@ public class Def {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Random rand = new Random();
-		int[] freqs = new int[20];
+		
 		List<Integer> list = new ArrayList<>();
+		for(int i=0; i<20; i++) {
+			list.add(0);
+		}
 		for (int i=0; i<10000; i++) {
 			int r = rand.nextInt(20);
-			list.add(r);
-			freqs[r]++;
+			Integer freq = list.get(r);
+//			Integer freq = list.contains(r) ? list.get(r)+1: 1;
+//			Integer freq = list.get(r);
+			list.set(r, freq+1);
 		}
-		for(int i=0; i< freqs.length; i++) {
-			System.out.println(i+":"+freqs[i]);
-		}
+		
+		System.out.println(list);
+		
 	}
 
 }
