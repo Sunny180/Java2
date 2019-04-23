@@ -10,9 +10,14 @@ public class Except {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("多少人要分?");
 		String number = scanner.nextLine();
-		int n = Integer.parseInt(number);
-		int div = bonus/n;
-		System.out.println("每個人得" + div);
+		try {
+			int n = Integer.parseInt(number);
+			int div = bonus/n;
+			System.out.println("每個人得" + div);
+		}catch(Exception e){
+			System.out.println("資料錯誤");
+		}
+		
 	}
 
 }
